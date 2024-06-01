@@ -7,7 +7,7 @@ let msg = "";
 let new_cards = [];
 let player = {
     name: "Per",
-    chips: 200
+    chips: 0
 }
 let playerEl = document.getElementById("player-el");
 let messageEl = document.getElementById("message-el");
@@ -23,6 +23,7 @@ function startGame(){
     } else if (sum === 21){
         msg = "Wohoo! You've got Blackjack! 🥳"
         hasBlackJack = true;
+        playerEl.textContent = player.name + ": $" + 200
     } else {
         msg = "You're out of the game! 😭"
         isAlive = false;
