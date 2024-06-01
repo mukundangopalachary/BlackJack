@@ -23,5 +23,5 @@ To play the game, follow these steps:
 3. Run the command `npm install` to install the required dependencies.
 4. Run the command `npm start` to start the game.
 
-Hosted on [BlackJack](https://mukundangopalachary.github.io/BlackJack/)
+
 Enjoy playing blackjack!
