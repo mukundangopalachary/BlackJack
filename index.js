@@ -25,25 +25,29 @@ function startGame(){
 
     messageEl.textContent = msg;
     sumEl.textContent = "Sum: " + sum;
-    cardEl.textContent = "Cards: " + firstCard + ", " + secondCard + ", " + new_cards;
+    cardEl.textContent = "Cards: " + firstCard + ", " + secondCard + ",  " + new_cards;
 }
 
 function newCard(){
-    let card = Math.floor(Math.random() * 13) + 1;
-    new_cards.push(card);
-    sum += card;
-    if (sum<21){
-        msg = "Press 'New Card' to draw a new card! 🃏"
-        
-    } else if (sum === 21){
-        msg = "Wohoo! You've got Blackjack! 🥳"
-        hasBlackJack = true;
-    } else {
-        msg = "You're out of the game! 😭"
-        isAlive = false;
-    }
+    if (isAlive === true && hasBlackJack === false){
+        let card = Math.floor(Math.random() * 13) + 1;
+        new_cards.push(card);
+        sum += card;
+        if (sum<21){
+            msg = "Press 'New Card' to draw a new card! 🃏"
 
-    messageEl.textContent = msg;
-    sumEl.textContent = "Sum: " + sum;
-    cardEl.textContent = "Cards: " + firstCard + ", " + secondCard + ", " + new_cards;
+        } else if (sum === 21){
+            msg = "Wohoo! You've got Blackjack! 🥳"
+            hasBlackJack = true;
+        } else {
+            msg = "You're out of the game! 😭"
+            isAlive = false;
+        }
+
+        messageEl.textContent = msg;
+       
+        sumEl.textContent = "Sum: " + sum;
+       
+        cardEl.textContent = "Cards: " + firstCard + ", " + secondCard + ", " + new_cards;
+    }    
 }
